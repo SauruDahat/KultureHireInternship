@@ -1,0 +1,46 @@
+Step-by-Step Guide for Creating Three Functional Dashboards in Excel
+Step 1: Use the Excel dashboarding course for your reference.
+
+Step 2: Understand each functional dashboard variable in the next steps to effectively design and implement the dashboards.
+
+Step 3: Identify and create efficient business questions for each dashboard.
+
+Step 4: Identify and decide which KPIs and slicers should be used.
+
+Step 5: Create a new sheet named after each particular functional dashboard (e.g., "Learning Aspirations Dashboard"). Repeat for other dashboards as well.
+
+Step 6: Create charts based on the business questions for each functional dashboard.
+
+Step 7: Assemble and arrange the charts in their respective "Dashboard" sheets to build your dashboards.
+
+Step 8: Apply tips and tricks to create efficient and effective dashboards.
+
+Step 9: Review and finalize each dashboard to ensure they clearly present the data and insights.
+
+
+
+Manager Aspirations Dashboard
+
+This dashboard aims to analyze the respondents' preferences and willingness to work under certain conditions, such as abusive managers, remote work, and daily work hours.
+
+Columns to Consider:
+Working Under an Abusive Manager
+Remote Working
+Daily Work Hours Willingness
+Minimum Expected Salary (First 3 Years)
+Minimum Expected Salary (After 5 Years)
+If you believe there are other relevant columns for this dashboard, feel free to incorporate them into your design.
+
+
+
+
+Mission Aspirations Dashboard
+
+This dashboard is designed to evaluate the respondents' clarity and alignment with their company's mission, as well as their preferences for socially impactful companies.
+
+Columns to Consider:
+
+Mission Clarity in Company Evaluation
+Alignment of Company Mission and Actions
+Employee Preferences for Socially Impactful Companies
+If you believe there are other relevant columns for this dashboard, feel free to incorporate them into your design.

@@ -1,0 +1,242 @@
+1. What is the gender distribution of respondents from India?
+
+select gender, count(gender) as GENDER_COUNT
+from milestone
+where country = 'India'
+group by gender ;
+
+
+2. What percentage of respondents from India are interested in education abroad and sponsorship?
+
+select pursue_education_outside_of_india_if_sponsored, 
+count(pursue_education_outside_of_india_if_sponsored) as count_of_pursue,
+(
+	count(pursue_education_outside_of_india_if_sponsored)*100 /
+	(
+		select count(*) from milestone where country = 'India'
+	)
+) as percentage_of_pursue
+from milestone
+where country ='India'
+group by pursue_education_outside_of_india_if_sponsored;
+
+
+
+3. What are the 6 top influences on career aspirations for respondents in India?
+
+select career_aspirations_influences, count(career_aspirations_influences) as total_aspiratons
+from milestone
+where country= 'India'
+group by career_aspirations_influences
+order by count(career_aspirations_influences) desc
+limit 6;
+
+
+4. How do career aspiration influences vary by gender in India?
+
+select gender, count(career_aspirations_influences) as influences,
+	(
+		count(career_aspirations_influences)*100 /
+		(
+			select count(*) from milestone 
+			where country = 'India'
+		)
+	) as influence_percent
+from milestone 
+where country='India'
+group by gender;
+
+
+5. What percentage of respondents are willing to work for a company for at least 3 years?
+
+select work_for_one_employer_3_years_or_more, 
+	(
+		count(work_for_one_employer_3_years_or_more)*100.0 /
+		(
+			select count(*) from milestone
+			where country='India'
+		)
+	)as percent_of_workers
+from milestone
+where country = 'India'
+group by work_for_one_employer_3_years_or_more
+
+
+6. How many respondents prefer to work for socially impactful companies?
+
+with company_percentage as(
+select work_for_a_company_whose_mission_is_not_bringing_social_impact,
+	(
+	count(work_for_a_company_whose_mission_is_not_bringing_social_impact)*100.0 /
+		(
+			select count(*) from milestone where country='India'
+			)
+	)as percent_workers
+from milestone
+where country='India'
+and cast(work_for_a_company_whose_mission_is_not_bringing_social_impact as int)
+between 1 and 5
+group by work_for_a_company_whose_mission_is_not_bringing_social_impact
+limit 5
+)
+select work_for_a_company_whose_mission_is_not_bringing_social_impact,percent_workers,
+(
+select sum(percent_workers) from company_percentage
+) as total_percentage 
+from company_percentage;
+
+
+7. How does the preference for socially impactful companies vary by gender?
+
+select gender, count(work_for_a_company_whose_mission_is_not_bringing_social_impact)*100.0 /
+		(
+			select count(*) from milestone where country='India'
+			) as social_impact_view
+from milestone 
+where country ='India'
+group by gender;
+
+
+8. What is the distribution of minimum expected salary in the first three years among respondents?
+
+select minimum_expected_monthly_salary_for_first_3_years, 
+count(minimum_expected_monthly_salary_for_first_3_years)*100.0 /
+	(
+	select count(*) from milestone where country='India'
+	) as percent_distribution
+from milestone
+where country='India'
+group by minimum_expected_monthly_salary_for_first_3_years
+order by percent_distribution desc ;
+
+
+9. What is the expected minimum monthly salary in hand?
+
+select minimum_expectations_of_salary_as_fresher, count(minimum_expectations_of_salary_as_fresher)
+from milestone
+where country='India'
+group by minimum_expectations_of_salary_as_fresher
+order by count(minimum_expectations_of_salary_as_fresher) desc
+offset 1 row;
+
+
+10. What percentage of respondents prefer remote working?
+
+with percent_remote as(
+select preferred_working_environment, count(preferred_working_environment)*100.0 /
+	(
+	select count(*) from milestone where country ='India'
+	) as percent_worker
+from milestone where country='India'
+group by preferred_working_environment
+having preferred_working_environment like '%Fully Remote%'
+)
+select
+sum(percent_worker) as total_percentage
+from percent_remote;
+
+
+11. What is the preferred number of daily work hours?
+
+select hours_would_you_be_willing_to_work_every_day,
+count(hours_would_you_be_willing_to_work_every_day) as hours
+from milestone where country='India'
+group by hours_would_you_be_willing_to_work_every_day
+order by hours desc
+offset 1 row;
+
+
+12. What are the common work frustrations among respondents?
+
+select what_would_frustrate_you_at_work, 
+count(what_would_frustrate_you_at_work) as common_frustrations
+from milestone where country='India'
+group by what_would_frustrate_you_at_work
+order by common_frustrations desc
+offset 1 row
+limit 3;
+
+
+13. How does the need for work-life balance interventions vary by gender?
+
+select gender,count(full_week_break_for_work_life_balance)*100.0/
+	(select count(*)from milestone where country='India') as percent_work_life
+from milestone where country='India'
+group by gender;
+
+
+14. How many respondents are willing to work under an abusive manager?
+
+select work_under_abusive_manager,count(work_under_abusive_manager) as total
+from milestone where country='India'
+group by work_under_abusive_manager
+having work_under_abusive_manager like 'Yes' ;
+
+
+15. What is the distribution of minimum expected salary after five years?
+
+select minimum_expected_monthly_salary_for_first_5_years, count(minimum_expected_monthly_salary_for_first_5_years) as total_count
+from milestone where country='India'
+group by minimum_expected_monthly_salary_for_first_5_years
+order by total_count desc
+limit 3;
+
+
+16. What are the remote working preferences by gender?
+
+
+select gender, preferred_working_environment, 
+count(preferred_working_environment)*100.0 /
+	(select count(*) from milestone where country='India') as preference
+from milestone where country = 'India'
+group by gender  ,preferred_working_environment
+having (preferred_working_environment) like '%Fully Remote%' ;
+
+
+
+17. What are the top work frustrations for each gender? [TOP 3]
+
+select gender,what_would_frustrate_you_at_work,
+count(what_would_frustrate_you_at_work)*100.0 /
+	(select count(*) from milestone where country='India') as percent_gender
+from milestone where country='India'
+group by gender,what_would_frustrate_you_at_work
+order by percent_gender desc
+offset 2 rows
+limit 6;
+
+
+18. What factors boost work happiness and productivity for respondents?
+
+select what_would_make_you_happier_and_productive_at_work, 
+count(what_would_make_you_happier_and_productive_at_work) as top_factors
+from milestone where country='India'
+group by what_would_make_you_happier_and_productive_at_work
+order by top_factors desc
+limit 3
+offset 1 row ;
+
+
+19. What percentage of respondents need sponsorship for education abroad?
+
+
+select pursue_education_outside_of_india_if_sponsored, 
+count(pursue_education_outside_of_india_if_sponsored) as count_of_pursue,
+(
+	count(pursue_education_outside_of_india_if_sponsored)*100.0 /
+	(
+		select count(*) from milestone where country = 'India'
+	)
+) as percentage_of_pursue
+from milestone
+where country ='India'
+group by pursue_education_outside_of_india_if_sponsored
+having pursue_education_outside_of_india_if_sponsored like '%sponsored%';
+
+
+
+Step 1: Write the business question.
+
+Step 2: Copy and paste the SQL query from MySQL Workbench for the particular business question you wrote in Step 1.
+
+Step 3: Repeat steps 1 and 2 for all the questions.
