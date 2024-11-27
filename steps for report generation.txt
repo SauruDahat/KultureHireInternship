@@ -1,0 +1,75 @@
+1. we understood the problem statement
+2. studied the GenZ study report
+3. identified stakeholders
+4. data collection
+5. data cleaning and standardization in excel
+6. data analysis in excel by creating pivot tables for each project questions
+questions (1. What is the gender distribution of respondents from India?
+2. What percentage of respondents from India are interested in education abroad and sponsorship?
+3. What are the 6 top influences on career aspirations for respondents in India?
+4. How do career aspiration influences vary by gender in India?
+5. What percentage of respondents are willing to work for a company for at least 3 years?
+6. How many respondents prefer to work for socially impactful companies?
+7. How does the preference for socially impactful companies vary by gender?
+8. What is the distribution of minimum expected salary in the first three years among respondents?
+9. What is the expected minimum monthly salary in hand?
+10. What percentage of respondents prefer remote working?
+11. What is the preferred number of daily work hours?
+12. What are the common work frustrations among respondents?
+13. How does the need for work-life balance interventions vary by gender?
+14. How many respondents are willing to work under an abusive manager?
+15. What is the distribution of minimum expected salary after five years?
+16. What are the remote working preferences by gender?
+17. What are the top work frustrations for each gender?
+18. What factors boost work happiness and productivity for respondents?
+19. What percentage of respondents need sponsorship for education abroad?)
+
+7. then we did the same data analysis in SQL by writing queris for same questions
+8. created executive dashboard for following questions
+questions( What are the top 5 influences on career aspirations?
+Top 5 preferred company types.
+GenZ who wanted to pursue a Higher Education
+Top 3 work setup
+Alignment of company mission and actions
+Clarity of company mission (percentage).
+Distribution of minimum expected salary for the first three years.
+Most common work frustrations.
+Slicer as Gender
+KPI - Total Respondents
+KPI - Gender Distribution (Eg: 60% Male, 40% Female))
+
+9.then created Functional dashboard in power bi for following questions
+questions(Manager Aspirations Dashboard
+
+This dashboard aims to analyze the respondents' preferences and willingness to work under certain conditions, such as abusive managers, remote work, and daily work hours.
+
+Columns to Consider:
+
+Daily Work Hours Willingness
+Remote Working
+Minimum Expected Salary (First 3 Years)
+Minimum Expected Salary (After 5 Years)
+
+Working Under an Abusive Manager
+
+If you believe there are other relevant columns for this dashboard, feel free to incorporate them into your design.
+
+Learning Aspirations dashboard
+
+Columns to consider:
+
+Daily working hours
+preferred working environment
+preferred Manager
+preferred learning environment
+
+
+Mission Aspirations Dashboard
+
+This dashboard is designed to evaluate the respondents' clarity and alignment with their company's mission, as well as their preferences for socially impactful companies.
+
+Columns to Consider:
+
+Mission Clarity in Company Evaluation
+Alignment of Company Mission and Actions
+Employee Preferences for Socially Impactful Companies)

@@ -1,0 +1,21 @@
+Create a comprehensive Project Completion Report that summarizes the entire project, from the initial problem statement to the final outcomes.
+What should be included in the report?
+The report should include an introduction, project objectives, methodologies used, key findings, stakeholder analysis, project outcomes, challenges faced, lessons learned, and recommendations for future projects.
+Additionally, highlight five "wow" insights that were discovered during the project.
+
+
+Step 1: Compile Project Overview and Methodologies
+Provide an introduction outlining project objectives, scope, and the initial problem statement.
+Summarize the tools and methods used, including data collection and analysis techniques
+Step 2: Present Key Findings and Stakeholder Analysis
+Summarize the most significant insights and results from your data analysis. Include a review of identified stakeholders, their roles, and contributions
+Step 3: Document Project Outcomes and Challenges
+Describe the deliverables, goals achieved, and overall project impact.
+Identify obstacles faced during the project and how they were addressed.
+Step 4: Capture Lessons Learned and Provide Recommendations
+Reflect on what worked well and what could be improved for future projects.
+Suggest improvements based on the findings and experiences.
+Step 5: Highlight Five "Wow" Insights
+Identify and describe five significant, surprising, or impactful insights discovered during the project.
+Step 6: Compile, Format, and Submit the Report
+Organize all sections into a coherent, well-structured document with consistent formatting. Submit the final report as a DOCX (Microsoft Word Document) file.
